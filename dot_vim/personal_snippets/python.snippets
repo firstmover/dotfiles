@@ -1,0 +1,129 @@
+# personal snippet, overwrite default snippets 
+priority 233 
+
+##############
+#  comments  #
+##############
+
+snippet todo "A TODO reminder" b
+# TODO(`!v g:snips_author` `!v strftime('%m/%d')`):: ${1:fix this}
+endsnippet
+
+snippet note "A NOTE reminder" b
+# NOTE(`!v g:snips_author` `!v strftime('%m/%d')`):: ${1:a note}
+endsnippet
+
+snippet deprecate "A DEPRECATE reminder" b
+"""DEPRECATED(`!v g:snips_author`): ${1} has been deprecated and will be removed by `!p
+import time
+snip.rv = time.strftime('%m/%d/%Y', time.localtime(time.mktime(time.localtime()) + 3600 * 24 * 180))
+`; please use ${2} instead."""
+endsnippet
+
+###############
+#  debugging  #
+###############
+
+#snippet embed "IPython embed" b 
+#from IPython import embed; embed(header="${1}")
+#endsnippet 
+
+# embed ipython itself
+snippet iem "IPython embed" b 
+__import__('IPython').embed(header="${1}")
+endsnippet 
+
+# check a variable 
+snippet check "print a variable's name and value" b 
+print("${1:}: {}".format(${2:$1}))
+endsnippet 
+
+##############
+#  argparse  #
+##############
+
+snippet addp "add parser" 
+parser = ${VISUAL:argparse.}ArgumentParser(description="${1:description}")
+endsnippet
+
+snippet addarg "add argument" b 
+parser.add_argument("${1:short_arg}", default=${2:None}, help="${3:Help text}")
+endsnippet 
+
+snippet addaarg "add action argument" b 
+parser.add_argument("${1:arg}", action="${2:store_true}", default=${3:False}, help="${4:Help text}")
+endsnippet 
+
+snippet pargs "parser parse arugments" b 
+${VISUAL:args} = parser.parse_args()
+endsnippet 
+
+snippet templateargparse "template: default argparse" b 
+parser = argparse.ArgumentParser(description="${1:}")
+parser.add_argument("--log_path", type=str, default="${2:/tmp/lyc_hahah.log}")
+parser.add_argument("--debug", action="store_true")
+args = parser.parse_args() 
+endsnippet 
+
+#############
+#  logging  #
+#############
+
+# glog = get log
+snippet getlogger "get logger" b 
+logger = logging.getLogger(${0:__name__})
+endsnippet 
+
+# conflict with lambda=ld, therefor we change into Logger.debuG
+snippet loge "log error" b 
+logger.error(${0:msg})
+endsnippet 
+
+snippet logd "log debug" b 
+logger.debug(${0:msg})
+endsnippet 
+
+snippet logw "log warning" b 
+logger.warning(${0:msg})
+endsnippet 
+
+snippet logc "log critical" b 
+logger.critical(${0:msg})
+endsnippet 
+
+snippet logi "log info" b 
+logger.info(${0:msg})
+endsnippet 
+
+snippet templatesetlogging "default logging" b
+logging.basicConfig(
+	format="%(name)10s: [%(levelname)6s] - %(message)s", 
+	filename=${1:args.log_path},
+	level=${2:logging.DEBUG},
+)
+logger = logging.getLogger(__name__) 
+logger.info("Logging to {}".format(${3:$1}))
+endsnippet 
+
+snippet templatesetloggingcolor "color logging from PyLyu" b 
+logging.set_default_level(${1:logging.INFO})
+logging.set_output_file(${2:"/tmp/lyc_hahah.log"})
+
+logger = logging.getLogger(__file__)
+logger.info("Logging to {}".format(${3:$2}))
+endsnippet 
+
+##########
+#  misc  #
+##########
+
+snippet templateimport "import common module" b 
+import os 
+import os.path as osp 
+import argparse
+import logging 
+endsnippet 
+
+snippet assertpath "assert path exists" b
+assert osp.exists(${1}), ${2:$1}
+endsnippet
