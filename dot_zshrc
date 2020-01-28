@@ -1,0 +1,89 @@
+
+###########
+#  alias  #
+###########
+
+
+###########
+#  zplug  #
+###########
+
+export ZPLUG_HOME=$HOME/.zplug
+
+# install zplug 
+local zplug_init=$ZPLUG_HOME/init.zsh
+if [ ! -f "$zplug_init" ] &> /dev/null; then
+    git clone https://github.com/zplug/zplug $ZPLUG_HOME 
+fi
+
+source $zplug_init
+
+# manage zplug with zplug
+# zplug 'zplug/zplug', hook-build:'zplug --self-manage' 
+
+# git 
+zplug "plugins/git", from:oh-my-zsh
+
+# extract compressed files 
+zplug "plugins/extract", from:oh-my-zsh
+
+# autojump 
+# TODO:  <28-01-20, YL> #
+# add key bindings 
+zplug "plugins/autojump", from:oh-my-zsh
+
+# Set the priority when loading
+# zsh-syntax-highlighting must be loaded
+# after executing compinit command and sourcing other plugins
+# (If the defer tag is given 2 or above, run after compinit command)
+zplug "plugins/zsh-syntax-highlight", from:oh-my-zsh
+
+# fzf, installation is not handled here 
+# assume it is aready installed 
+# zplug "junegunn/fzf", use:"shell/*.zsh"
+
+# theme 
+zplug "agkozak/agkozak-zsh-prompt"
+
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+# source plugins and add commands to $PATH 
+zplug load
+
+########################
+#  agkozak-zsh-prompt  #
+########################
+
+if zplug check agkozak/agkozak-zsh-prompt; then 
+    AGKOZAK_PROMPT_DIRTRIM=3
+    AGKOZAK_PROMPT_CHAR=( '>' '>' '<')
+    AGKOZAK_LEFT_PROMPT_ONLY=1
+    AGKOZAK_USER_HOST_DISPLAY=0
+fi 
+
+#########
+#  fzf  #
+#########
+
+local FZF_ROOT=$HOME/.fzf
+
+# check if fzf binary is compiled
+if [ -f "$FZF_ROOT/bin/fzf" ]; then
+
+    # echo "Fzf installed"
+    if [[ ! "$PATH" == *$FZF_ROOT/bin* ]]; then
+        export PATH="${PATH:+${PATH}:}$FZF_ROOT/bin"
+    fi
+
+    # auto-completion if current shell is interactive 
+    [[ $- == *i* ]] && source "$FZF_ROOT/shell/completion.zsh" 2> /dev/null
+
+    # key bindings
+    source "$FZF_ROOT/shell/key-bindings.zsh"
+fi 
