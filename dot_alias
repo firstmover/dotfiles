@@ -1,0 +1,16 @@
+#########
+#  git  #
+#########
+
+alias gg="git status"
+alias gloa="glog --all" 
+
+#################
+#  commandline  #
+#################
+
+# TODO:  <28-01-20, YL> #
+# include macos ls alias 
+# make dot_alias as a template 
+alias ls="ls --color=tty --group-directories-first -X"
+

@@ -1,0 +1,4 @@
+
+# local bin, has higher priority
+export PATH=$HOME/.local/bin:$HOME/.bin:$PATH 
+

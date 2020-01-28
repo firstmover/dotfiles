@@ -1,8 +1,14 @@
+#############
+#  general  #
+#############
 
-###########
-#  alias  #
-###########
-
+# source .alias .env .function .bindkey if exists
+for file_name in alias env function bindkey;
+do
+    local file=$HOME/.$file_name
+    [ -r "$file" ] && [ -f "$file" ] && source "$file";
+done 
+unset file_name 
 
 ###########
 #  zplug  #
