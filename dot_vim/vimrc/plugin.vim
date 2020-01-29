@@ -58,6 +58,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'Lokaltog/vim-easymotion'
 
 " file finder 
+" TODO:  <28-01-20, YL> "
+" install should be handled seperately
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
