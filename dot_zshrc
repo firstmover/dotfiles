@@ -83,6 +83,11 @@ if [ -f "$FZF_ROOT/bin/fzf" ]; then
 
     # key bindings
     source "$FZF_ROOT/shell/key-bindings.zsh"
+
+    # use the silver searcher 
+    if [ -x "$(command -v ag)" ]; then
+        FZF_DEFAULT_COMMAND='ag'
+    fi
 fi 
 
 #############
