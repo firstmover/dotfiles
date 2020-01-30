@@ -1,0 +1,9 @@
+
+# keyboard 
+# linux: 25 per sec, 660 milisecond delay
+# TODO:  <29-01-20, YL> #
+# macos 
+if [ -x "$(command -v xset)" ]; then
+    xset r rate 280 50
+fi
+

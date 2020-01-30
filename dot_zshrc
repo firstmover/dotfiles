@@ -98,6 +98,10 @@ do
 done 
 unset file_name 
 
+# xprofile 
+local file=$HOME/.xprofile
+[ -r "$file" ] && [ -f "$file" ] && source "$file";
+
 ###########
 #  conda  #
 ###########
