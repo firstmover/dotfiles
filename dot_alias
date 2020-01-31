@@ -19,3 +19,10 @@ alias brt="br --cmd \":pt\""
 
 # broot list size and permission 
 alias bra="br -dsp"
+
+#############
+#  chezmoi  #
+#############
+
+alias chi="chezmoi -S $HOME/.chezmoi"
+
