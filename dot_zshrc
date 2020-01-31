@@ -21,6 +21,10 @@ zplug "lib/*", from:oh-my-zsh
 # git 
 zplug "plugins/git", from:oh-my-zsh
 
+# git with fzf 
+# alias won't work if don't defer 
+zplug "wfxr/forgit", defer:2
+
 # extract compressed files 
 zplug "plugins/extract", from:oh-my-zsh
 
