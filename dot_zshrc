@@ -94,6 +94,16 @@ if [ -f "$FZF_ROOT/bin/fzf" ]; then
     fi
 fi 
 
+###########
+#  broot  #
+###########
+
+# TODO:  <31-01-20, YL> #
+# how to check if broot is installed 
+local broot_conf=$HOME/.config/broot/launcher/bash/br
+[ -r "$broot_conf" ] && [ -f "$broot_conf" ] && source "$broot_conf";
+unset broot_conf
+
 #############
 #  general  #
 #############

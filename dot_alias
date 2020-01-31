@@ -3,7 +3,7 @@
 #########
 
 alias gg="git status"
-alias gloa="glog --all" 
+# alias gloa="glog --all"
 
 #################
 #  commandline  #
@@ -14,3 +14,8 @@ alias gloa="glog --all"
 # make dot_alias as a template 
 alias ls="ls --color=tty --group-directories-first -X"
 
+# broot tree 
+alias brt="br --cmd \":pt\""
+
+# broot list size and permission 
+alias bra="br -dsp"
