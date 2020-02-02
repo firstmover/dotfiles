@@ -32,10 +32,8 @@ inoremap ww <esc>
 " inoremap <esc> <nop> 
 
 " move to beginning/end of line
-nnoremap , ^
-nnoremap . $
-xnoremap , ^ 
-xnoremap . $ 
+map , ^
+map . $
 " nnoremap $ <nop>
 " nnoremap ^ <nop>
 
