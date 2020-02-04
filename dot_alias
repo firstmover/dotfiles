@@ -20,6 +20,9 @@ alias brt="br --cmd \":pt\""
 # broot list size and permission 
 alias bra="br -dsp"
 
+# neovim 
+alias nvim="nvim.appimage"
+
 #############
 #  chezmoi  #
 #############
