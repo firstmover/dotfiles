@@ -9,18 +9,20 @@ alias gg="git status"
 #  commandline  #
 #################
 
-# TODO:  <28-01-20, YL> #
-# include macos ls alias 
-# make dot_alias as a template 
+{{- if eq .chezmoi.os "linux" }}
 alias ls="ls --color=tty --group-directories-first -X"
+{{- end }}
+{{- if eq .chezmoi.os "darwin" }}
+alias ls="gls --color=tty -h --group-directories-first"
+{{- end }}
 
-# broot tree 
+# broot tree
 alias brt="br --cmd \":pt\""
 
-# broot list size and permission 
+# broot list size and permission
 alias bra="br -dsp"
 
-# neovim 
+# neovim
 alias nvim="nvim.appimage"
 alias nv="nvim.appimage"
 
@@ -29,4 +31,3 @@ alias nv="nvim.appimage"
 #############
 
 alias chi="chezmoi -S $HOME/.chezmoi"
-
