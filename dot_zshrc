@@ -92,6 +92,12 @@ if [ -f "$FZF_ROOT/bin/fzf" ]; then
     if [ -x "$(command -v ag)" ]; then
         FZF_DEFAULT_COMMAND='ag'
     fi
+
+    # color 
+    export FZF_DEFAULT_OPTS='
+		--color fg:252,bg:016,hl:166,fg+:255,bg+:233,hl+:202
+		--color info:144,prompt:161,spinner:161,pointer:161,marker:118
+    '
 fi 
 
 ###########
