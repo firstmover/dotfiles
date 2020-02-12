@@ -138,8 +138,8 @@ syntax on
 set laststatus=2
 
 " show line number 
-set number
-" set relativenumber
+" set number
+set relativenumber
 
 " disable line wrapping 
 set nowrap
