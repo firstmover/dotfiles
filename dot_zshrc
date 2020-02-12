@@ -98,6 +98,17 @@ if [ -f "$FZF_ROOT/bin/fzf" ]; then
 		--color fg:252,bg:016,hl:166,fg+:255,bg+:233,hl+:202
 		--color info:144,prompt:161,spinner:161,pointer:161,marker:118
     '
+
+    # ctrl-T
+    # Using highlight (http://www.andre-simon.de/doku/highlight/en/highlight.html)
+    export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
+    
+    # auto select shen only one option, auto exit when no option
+    export FZF_CTRL_T_OPTS="--select-1 --exit-0"
+
+    # ctrl-R, remove duplicate command history 
+    # FIXME:  <08-02-20, YL> #
+    export FZF_CTRL_R_OPTS='--sort --exact'
 fi 
 
 ###########
