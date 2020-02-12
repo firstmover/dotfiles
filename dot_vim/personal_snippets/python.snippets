@@ -9,6 +9,10 @@ snippet todo "A TODO reminder" b
 # TODO(`!v g:snips_author` `!v strftime('%m/%d')`):: ${1:fix this}
 endsnippet
 
+snippet removethis "A TODO remove this reminder" b
+# TODO(`!v g:snips_author` `!v strftime('%m/%d')`):: remove this 
+endsnippet
+
 snippet note "A NOTE reminder" b
 # NOTE(`!v g:snips_author` `!v strftime('%m/%d')`):: ${1:a note}
 endsnippet
@@ -127,3 +131,18 @@ endsnippet
 snippet assertpath "assert path exists" b
 assert osp.exists(${1}), ${2:$1}
 endsnippet
+
+# new property, fixed vim-snippet 
+snippet property "define property" b 
+def ${1:foo}():
+	doc = "${2:The $1 property.}"
+	def fget(self):
+		${3:return self._$1}
+	def fset(self, value):
+		${4:self._$1 = value}
+	def fdel(self):
+		${0:del self._$1}
+	return locals()
+$1 = property(**$1())
+endsnippet
+
