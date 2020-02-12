@@ -22,6 +22,7 @@ alias bra="br -dsp"
 
 # neovim 
 alias nvim="nvim.appimage"
+alias nv="nvim.appimage"
 
 #############
 #  chezmoi  #
