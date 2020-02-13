@@ -380,3 +380,15 @@ let g:ale_set_highlights=0
 highlight ALEErrorSign ctermfg=Red ctermbg=233 
 highlight ALEWarningSign ctermfg=Yellow ctermbg=233  
 
+" NOTE:: moved to ftplugin 
+" fixers 
+" let g:ale_fixers = {
+" \   'python': ['mypy', 'isort', 'flake8', 'black'],
+" \}
+
+" do not fix on save 
+" let g:ale_fix_on_save=0
+
+" fix file 
+map F :ALEFix<cr>
+
