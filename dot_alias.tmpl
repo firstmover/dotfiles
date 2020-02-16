@@ -5,6 +5,14 @@
 alias gg="git status"
 # alias gloa="glog --all"
 
+{{- if eq .chezmoi.os "darwin" }}
+##########
+#  mosh  #
+##########
+
+alias mosh="mosh --experimental-remote-ip=remote"
+
+{{- end }}
 #################
 #  commandline  #
 #################
