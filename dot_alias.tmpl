@@ -31,8 +31,13 @@ alias brt="br --cmd \":pt\""
 alias bra="br -dsp"
 
 # neovim
+{{- if eq .chezmoi.os "linux" }}
 alias nvim="nvim.appimage"
 alias nv="nvim.appimage"
+{{- end }}
+{{- if eq .chezmoi.os "darwin" }}
+alias nv="nvim"
+{{- end }}
 
 #############
 #  chezmoi  #
