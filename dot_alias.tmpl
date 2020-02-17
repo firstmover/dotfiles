@@ -18,18 +18,14 @@ alias mosh="mosh --experimental-remote-ip=remote"
 #  commandline  #
 #################
 
-{{- if eq .chezmoi.os "linux" }}
-alias ls="ls --color=tty --group-directories-first -X"
-{{- end }}
-{{- if eq .chezmoi.os "darwin" }}
-alias ls="gls --color=tty -h --group-directories-first"
-{{- end }}
-
-# broot tree
-alias brt="br --cmd \":pt\""
-
-# broot list size and permission
+# broot
+# alias brt="br --cmd \":pt\""
 alias bra="br -dsp"
+
+# exa
+alias tree="exa --tree"
+alias l="exa -abghHliS --git"
+alias ls="exa"
 
 # neovim
 {{- if eq .chezmoi.os "linux" }}
