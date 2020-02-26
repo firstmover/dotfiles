@@ -198,7 +198,7 @@ let NERDTreeMinimalUI=1
 " display hidden file 
 let NERDTreeShowHidden=1
 " ignore file types 
-let NERDTreeIgnore = ['\.pyc$', '\.o$', '\.DS_Store', '\.swp', '\.git', '\.idea', '__pycache__']
+let NERDTreeIgnore = ['\.pyc$', '\.o$', '\.DS_Store', '\.swp', '\.git', '\.idea', '__pycache__', '.mypy_cache']
 
 " delete buffer when file is deleted 
 let NERDTreeAutoDeleteBuffer=1
