@@ -38,6 +38,9 @@ if g:has_async
   Plug 'dense-analysis/ale'
 endif 
 
+" quick select 
+Plug 'gcmt/wildfire.vim'
+
 """"""""""""
 "  layout  "
 """"""""""""
@@ -391,4 +394,19 @@ highlight ALEWarningSign ctermfg=Yellow ctermbg=233
 
 " fix file 
 map F :ALEFix<cr>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                             gcmt/wildfire.vim                              "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" text object 
+let g:wildfire_objects = ["i'", 'i"', "i)", "i]", "i}", "ip", "it"]
+
+" NOTE:: enter and bs is good 
+
+" selects next closest text object.
+" map <SPACE> <Plug>(wildfire-fuel)
+
+" selects previous closest text object.
+" vmap <C-SPACE> <Plug>(wildfire-water)
 
