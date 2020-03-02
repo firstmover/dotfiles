@@ -43,6 +43,9 @@ zplug "zsh-users/zsh-syntax-highlighting", defer:2
 # assume it is aready installed 
 # zplug "junegunn/fzf", use:"shell/*.zsh"
 
+# zsh-autosuggestions
+zplug "zsh-users/zsh-autosuggestions"
+
 # theme 
 zplug "agkozak/agkozak-zsh-prompt"
 
@@ -120,6 +123,20 @@ fi
 local broot_conf=$HOME/.config/broot/launcher/bash/br
 [ -r "$broot_conf" ] && [ -f "$broot_conf" ] && source "$broot_conf";
 unset broot_conf
+
+#########################
+#  zsh-autosuggestions  #
+#########################
+
+# ctrl space to accept suggestions 
+bindkey '^ ' autosuggest-accept
+
+# color 
+# NOTE:: bg color is not working 
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=237"
+
+# ignore history
+ZSH_AUTOSUGGEST_HISTORY_IGNORE="cd *|ls *|git *|nv *|vim *|neovim *|rm *|mv *|cp *| chi *"
 
 #############
 #  general  #
