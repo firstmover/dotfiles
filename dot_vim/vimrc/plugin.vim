@@ -66,6 +66,17 @@ Plug 'Lokaltog/vim-easymotion'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
+Plug 'psliwka/vim-smoothie'
+
+"""""""""""
+"  color  "
+"""""""""""
+
+Plug 'arzg/vim-colors-xcode'
+
+" see all color: https://rainglow.io/
+Plug 'rainglow/vim'
+
 """"""""""
 "  misc  "
 """"""""""
