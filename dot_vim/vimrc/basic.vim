@@ -54,7 +54,7 @@ augroup END
 " map kk to esc in insert mode 
 inoremap kk <esc>
 inoremap jj <esc>
-inoremap ww <esc>
+" inoremap ww <esc>
 " inoremap <esc> <nop> 
 
 " move to beginning/end of line
