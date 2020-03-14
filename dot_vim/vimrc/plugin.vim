@@ -49,6 +49,9 @@ Plug 'gcmt/wildfire.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
+" tag list 
+Plug 'majutsushi/tagbar'
+
 " statusline and statusline theme  
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -195,6 +198,7 @@ let g:NERDToggleCheckAllLines = 1
 " reorganize 
 
 " open file list when open file
+" see taglist autogroup
 " autocmd vimenter * NERDTree
 " autocmd VimEnter * wincmd l
 
@@ -205,7 +209,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 nmap <Leader>fl :NERDTreeToggle<CR>
 
 " window config
-let NERDTreeWinSize=22
+let NERDTreeWinSize=32
 let NERDTreeWinPos="left"
 let NERDTreeMinimalUI=1
 
@@ -227,6 +231,41 @@ let g:NERDTreeHighlightFolders = 1
 
 " highlights the folder name
 let g:NERDTreeHighlightFoldersFullName = 1 
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                   tagbar                                   "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+augroup nerdtree_tagbar
+  autocmd!
+
+  " open nerd tree and tag bar on opening files 
+  autocmd VimEnter * NERDTree
+  autocmd VimEnter * nested :TagbarOpen
+
+  " move cursor from nerd tree to left pane
+  autocmd VimEnter * wincmd l 
+
+augroup END
+
+nnoremap <Leader>tl: TagbarToggle<CR> 
+
+" window size 
+let g:tagbar_vertical = 32
+let g:tagbar_width=32
+
+" remove help info
+let g:tagbar_compact=1
+
+" track variables when editing file
+let g:tagbar_autoshowtag = 1 
+let g:tagbar_autofocus=1
+
+" not sort
+let g:tagbar_sort=0
+
+" default unfold
+let g:tagbar_foldlevel=99
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                               vim-easymotion                               "
