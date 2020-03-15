@@ -46,6 +46,11 @@ zplug "zsh-users/zsh-syntax-highlighting", defer:2
 # zsh-autosuggestions
 zplug "zsh-users/zsh-autosuggestions"
 
+# commandline cheatsheet
+# zplug "denisidoro/navi", \
+#     as:command, \
+#     hook-build:"make SOURCE_DIR=$HOME/.local/src/navi BIN_DIR=$HOME/.local/bin install"
+
 # theme 
 zplug "agkozak/agkozak-zsh-prompt"
 
