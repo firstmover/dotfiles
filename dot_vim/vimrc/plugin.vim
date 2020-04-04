@@ -394,19 +394,33 @@ endfunction
 " top to bottom
 let $FZF_DEFAULT_OPTS="--reverse "
 
-" use The Silver Searcher 
+" use The Silver Searcher
 if executable('ag')
-  " Use Ag over Grep
-  set grepprg=ag\ --nogroup\ --nocolor
+    " Use Ag over Grep
+    set grepprg=ag\ --nogroup\ --nocolor
 
-  " Use ag in fzf for listing files. Lightning fast and respects .gitignore
-  let $FZF_DEFAULT_COMMAND = 'ag --literal --files-with-matches --nocolor --hidden -g ""'
+    " Use ag in fzf for listing files. Lightning fast and respects .gitignore
+    let $FZF_DEFAULT_COMMAND = 'ag --literal --files-with-matches --nocolor --hidden -g ""'
 
-  if !exists(":Ag")
-    command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
-    nnoremap \ :Ag<SPACE>
-  endif
 endif
+
+" use ripgrep for string match
+if executable('rg')
+
+    function! RipgrepFzf(query, fullscreen)
+        " NOTE: remove --column will disable preview 
+        let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case --colors line:fg:white --colors line:style:bold --colors path:fg:075 --colors path:style:bold --colors match:fg:166 --colors match:style:bold %s || true'
+        let initial_command = printf(command_fmt, shellescape(a:query))
+        let reload_command = printf(command_fmt, '{q}')
+        let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
+        call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
+    endfunction
+
+    command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
+
+    nnoremap <c-s> :Rg<cr>
+
+endif 
 
 " Customize fzf colors to match your color scheme
 " - fzf#wrap translates this to a set of `--color` options
