@@ -71,6 +71,9 @@ Plug 'junegunn/fzf.vim'
 
 Plug 'psliwka/vim-smoothie'
 
+" disable highlight when done searching
+Plug 'romainl/vim-cool'
+
 """""""""""
 "  color  "
 """""""""""
