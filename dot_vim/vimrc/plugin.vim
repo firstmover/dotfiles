@@ -72,7 +72,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'psliwka/vim-smoothie'
 
 " disable highlight when done searching
-Plug 'romainl/vim-cool'
+" Plug 'romainl/vim-cool'
 
 """""""""""
 "  color  "
@@ -334,7 +334,7 @@ let vim_markdown_preview_github=1
 " customize vim airline
 
 " airline theme 
-let g:airline_theme='powerlineish'
+let g:airline_theme='lucius'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                 auto-pairs                                 "
