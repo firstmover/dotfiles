@@ -199,7 +199,7 @@ if &t_Co > 255
    hi PreProc         ctermfg=118
    hi Question        ctermfg=81
    hi Repeat          ctermfg=161               cterm=bold
-   hi Search          ctermfg=237   ctermbg=220   cterm=NONE
+   hi Search          ctermfg=199   ctermbg=053   cterm=NONE
 
    " marks column
    hi SignColumn      ctermfg=118 ctermbg=233
