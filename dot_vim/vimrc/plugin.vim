@@ -319,9 +319,9 @@ let g:gitgutter_override_sign_column_highlight=0
 
 " color 
 " highlight SignColumn guibg=#073642 ctermbg=234
-hi GitGutterAdd    guifg=#009900 guibg=#073642 ctermfg=2 ctermbg=233
-hi GitGutterChange guifg=#bbbb00 guibg=#073642 ctermfg=3 ctermbg=233
-hi GitGutterDelete guifg=#ff2222 guibg=#073642 ctermfg=1 ctermbg=233 
+hi GitGutterAdd    guifg=#009900 guibg=#073642 ctermfg=2 ctermbg=232
+hi GitGutterChange guifg=#bbbb00 guibg=#073642 ctermfg=3 ctermbg=232
+hi GitGutterDelete guifg=#ff2222 guibg=#073642 ctermfg=1 ctermbg=232
 
 " vim-markdown-preview 
 let vim_markdown_preview_github=1 
@@ -476,8 +476,8 @@ let g:ale_sign_warning='.'
 " highlight clear ALEErrorSign
 " highlight clear ALEWarningSign
 let g:ale_set_highlights=0
-highlight ALEErrorSign ctermfg=Red ctermbg=233 
-highlight ALEWarningSign ctermfg=Yellow ctermbg=233  
+highlight ALEErrorSign ctermfg=Red ctermbg=232
+highlight ALEWarningSign ctermfg=Yellow ctermbg=232
 
 " NOTE:: moved to ftplugin 
 " fixers 

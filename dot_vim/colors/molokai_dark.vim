@@ -202,7 +202,7 @@ if &t_Co > 255
    hi Search          ctermfg=199   ctermbg=053   cterm=NONE
 
    " marks column
-   hi SignColumn      ctermfg=118 ctermbg=233
+   hi SignColumn      ctermfg=118 ctermbg=232
    hi SpecialChar     ctermfg=161               cterm=bold
    hi SpecialComment  ctermfg=245               cterm=bold
    hi Special         ctermfg=81
@@ -234,7 +234,7 @@ if &t_Co > 255
    hi Comment         ctermfg=59
    hi CursorColumn                ctermbg=236
    hi ColorColumn                 ctermbg=236
-   hi LineNr          ctermfg=248 ctermbg=233
+   hi LineNr          ctermfg=250 ctermbg=232
    hi NonText         ctermfg=59
 
    hi SpecialKey      ctermfg=59
