@@ -6,7 +6,7 @@
   editor = nano
   autocrlf = input
   whitespace = fix,space-before-tab,tab-in-indent,trailing-space
-  pager = delta --dark
+  pager = bat
 [apply]
   whitespace = fix
 [color]
