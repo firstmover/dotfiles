@@ -115,6 +115,10 @@ map <leader>s? z=
 " toggle paste mode on and off 
 map <leader>pp :setlocal paste!<cr>
 
+" swap _ - 
+inoremap _ -
+inoremap - _
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                 navigation                                 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
