@@ -116,8 +116,8 @@ map <leader>s? z=
 map <leader>pp :setlocal paste!<cr>
 
 " swap _ - 
-inoremap _ -
-inoremap - _
+" inoremap _ -
+" inoremap - _
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                 navigation                                 "
