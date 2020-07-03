@@ -117,6 +117,15 @@ logger = logging.getLogger(__file__)
 logger.info("Logging to {}".format(${3:$2}))
 endsnippet 
 
+#######################
+#  framework related  #
+#######################
+
+# check a variable 
+snippet stcheck "print a variable's name and value with streamlit" b 
+st.markdown("${1:}: {}".format(${2:$1}))
+endsnippet 
+
 ##########
 #  misc  #
 ##########
