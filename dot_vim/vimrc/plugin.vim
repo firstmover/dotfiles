@@ -283,8 +283,8 @@ let g:tagbar_foldlevel=99
 "map  <leader>s <Plug>(easymotion-bd-f)            
 "nmap <leader>s <Plug>(easymotion-overwin-f)
 
-map  f <Plug>(easymotion-bd-w)
-nmap f <Plug>(easymotion-overwin-w)
+map  h <Plug>(easymotion-bd-w)
+nmap h <Plug>(easymotion-overwin-w)
 "nmap s <Plug>(easymotion-overwin-f2)
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -490,7 +490,7 @@ highlight ALEWarningSign ctermfg=Yellow ctermbg=232
 " let g:ale_fix_on_save=0
 
 " fix file 
-map F :ALEFix<cr>
+map H :ALEFix<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                             gcmt/wildfire.vim                              "
