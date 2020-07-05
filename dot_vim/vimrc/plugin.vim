@@ -47,7 +47,8 @@ Plug 'gcmt/wildfire.vim'
 
 " file list 
 Plug 'scrooloose/nerdtree'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+" TODO:  fix it <03-07-20, YL> "
+" Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " tag list 
 Plug 'majutsushi/tagbar'
