@@ -283,8 +283,8 @@ let g:tagbar_foldlevel=99
 "map  <leader>s <Plug>(easymotion-bd-f)            
 "nmap <leader>s <Plug>(easymotion-overwin-f)
 
-map  h <Plug>(easymotion-bd-w)
-nmap h <Plug>(easymotion-overwin-w)
+map  m <Plug>(easymotion-bd-w)
+nmap m <Plug>(easymotion-overwin-w)
 "nmap s <Plug>(easymotion-overwin-f2)
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
