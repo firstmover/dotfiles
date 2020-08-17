@@ -1,0 +1,24 @@
+Host *
+  UseKeychain yes
+
+Host jump.csail.mit.edu
+  GSSAPIAuthentication yes
+  VerifyHostKeyDNS yes
+  # optional, if X forwarding is desired
+  ForwardX11 yes
+  # optional, if your local username does not match YOUR_CSAIL_USERNAME
+  User liuyingcheng
+  # IdentityFile /Users/liuyingcheng/.ssh/id_rsa_netmit
+  
+Host *.csail.mit.edu !jump.csail.mit.edu 128.52.* 128.30.* 128.31.*
+  ProxyJump jump.csail.mit.edu
+  GSSAPIAuthentication yes
+  GSSAPIDelegateCredentials yes
+  # optional, if X forwarding is desired
+  ForwardX11 yes
+  # optional, if your local username does not match YOUR_CSAIL_USERNAME
+  User liuyingcheng
+
+Host desktop 
+  HostName 10.95.7.138 
+  User yingcheng-liu 
