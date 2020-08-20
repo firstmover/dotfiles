@@ -1,3 +1,18 @@
+{{- if eq .chezmoi.os "linux" }}
+Host jump.csail.mit.edu
+  GSSAPIAuthentication yes
+  GSSAPIKeyExchange yes
+  VerifyHostKeyDNS yes
+  User liuyingcheng 
+Host *.csail.mit.edu !jump.csail.mit.edu 128.52.* 128.30.* 128.31.*
+  ProxyCommand ssh -W %h:%p jump.csail.mit.edu
+  GSSAPIAuthentication yes
+  GSSAPIDelegateCredentials yes
+  GSSAPIKeyExchange yes
+  User liuyingcheng 
+{{- end }}
+
+{{- if eq .chezmoi.os "darwin" }}
 Host *
   UseKeychain yes
 
@@ -22,3 +37,4 @@ Host *.csail.mit.edu !jump.csail.mit.edu 128.52.* 128.30.* 128.31.*
 Host desktop 
   HostName 10.95.7.138 
   User yingcheng-liu 
+{{- end }}
