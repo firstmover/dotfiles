@@ -1,3 +1,8 @@
+Host github.com
+ HostName github.com
+ IdentityFile ~/.ssh/git/id_rsa
+ User git
+
 {{- if eq .chezmoi.os "linux" }}
 Host jump.csail.mit.edu
   GSSAPIAuthentication yes
