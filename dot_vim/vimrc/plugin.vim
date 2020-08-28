@@ -84,6 +84,8 @@ Plug 'arzg/vim-colors-xcode'
 " see all color: https://rainglow.io/
 Plug 'rainglow/vim'
 
+Plug 'sainnhe/sonokai'
+
 """"""""""
 "  misc  "
 """"""""""
@@ -509,3 +511,17 @@ let g:wildfire_objects = ["i'", 'i"', "i)", "i]", "i}", "ip", "it"]
 " selects previous closest text object.
 " vmap <C-SPACE> <Plug>(wildfire-water)
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                  sainnhe/sonokai                                   "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" if has('termguicolors')
+"   set termguicolors
+" endif
+"
+" " The configuration options should be placed before `colorscheme sonokai`.
+" let g:sonokai_style = 'andromeda'
+" let g:sonokai_enable_italic = 1
+" let g:sonokai_disable_italic_comment = 1
+"
+" colorscheme sonokai
