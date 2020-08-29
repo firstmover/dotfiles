@@ -84,8 +84,6 @@ Plug 'arzg/vim-colors-xcode'
 " see all color: https://rainglow.io/
 Plug 'rainglow/vim'
 
-Plug 'sainnhe/sonokai'
-
 """"""""""
 "  misc  "
 """"""""""
