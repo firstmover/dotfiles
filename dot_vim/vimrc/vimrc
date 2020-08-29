@@ -1,8 +1,0 @@
-" TODO:  <19-01-20, YL> "
-" udpate path to vimrc files 
-" .vimrc should be created when the dotfile is installed 
-" .vimrc is not linked to any file in .dotfile project 
-
-source ~/.dotfiles/modules/vim/vimrc/basic.vim
-source ~/.dotfiles/modules/vim/vimrc/plugin.vim
-
