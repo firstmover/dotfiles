@@ -183,4 +183,3 @@ set nofoldenable
 
 " customized color scheme 
 colorscheme molokai_dark
-
