@@ -166,6 +166,8 @@ let g:templates_directory='$HOME/.vim/templates'
 let g:username='Yingcheng Liu'
 let g:email='liuyc@mit.edu'
 
+nnoremap <leader>t :Template<cr>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                               nerdcommenter                                "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
