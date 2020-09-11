@@ -76,6 +76,17 @@ if zplug check agkozak/agkozak-zsh-prompt; then
     AGKOZAK_USER_HOST_DISPLAY=0
 fi 
 
+###########
+#  mcfly  #
+###########
+
+# put it before fzf so fzf ^R won't be overwrite
+# if command -v "mcfly" &> /dev/null; then
+#     local MCFLY_ROOT=$HOME/.local/src/mcfly
+#     source "$MCFLY_ROOT/mcfly.zsh"
+#     bindkey "^E" mcfly-history-widget
+# fi
+
 #########
 #  fzf  #
 #########
