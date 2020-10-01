@@ -159,7 +159,7 @@ set hlsearch
 
 " highlight current line / column 
 set cursorline
-"set cursorcolumn
+set cursorcolumn
 
 " enable syntax highlight 
 syntax on
@@ -183,3 +183,4 @@ set nofoldenable
 
 " customized color scheme 
 colorscheme molokai_dark
+
