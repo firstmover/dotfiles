@@ -221,7 +221,7 @@ let g:NERDToggleCheckAllLines = 1
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " open nerdtree, ;file list
-nmap <Leader>fl :NERDTreeToggle<CR>
+nnoremap <Leader>fl :NERDTreeToggle<CR>
 
 " window config
 let NERDTreeWinSize=32
@@ -312,8 +312,8 @@ let g:tagbar_foldlevel=99
 "map  <leader>s <Plug>(easymotion-bd-f)            
 "nmap <leader>s <Plug>(easymotion-overwin-f)
 
-map  m <Plug>(easymotion-bd-w)
-nmap m <Plug>(easymotion-overwin-w)
+" map  m <Plug>(easymotion-bd-w)
+nnoremap m <Plug>(easymotion-overwin-w)
 "nmap s <Plug>(easymotion-overwin-f2)
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -330,8 +330,8 @@ set updatetime=100
 let g:gitgutter_max_signs=500 
 
 " next / prev change 
-nmap ]c <Plug>(GitGutterNextHunk)
-nmap [c <Plug>(GitGutterPrevHunk)
+nnoremap ]c <Plug>(GitGutterNextHunk)
+nnoremap [c <Plug>(GitGutterPrevHunk)
 
 " turn on signs 
 let g:gitgutter_signs=1 
@@ -384,7 +384,7 @@ let g:indent_guides_start_level=2
 let g:indent_guides_guide_size=1
 
 " <Leader> ig toggle indent
-nmap <silent> <Leader>ig <Plug>IndentGuidesToggle
+nnoremap <silent> <Leader>ig <Plug>IndentGuidesToggle
 
 " indent color
 let g:indent_guides_auto_colors = 0
@@ -548,7 +548,7 @@ highlight ALEWarningSign ctermfg=Yellow ctermbg=232
 " let g:ale_fix_on_save=0
 
 " fix file 
-map H :ALEFix<cr>
+nnoremap H :ALEFix<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                             gcmt/wildfire.vim                              "
