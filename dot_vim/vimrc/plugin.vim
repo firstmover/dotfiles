@@ -256,10 +256,10 @@ let g:NERDTreeHighlightFoldersFullName = 1
 " path to doq, doq installed locally
 let g:pydocstring_doq_path = '$HOME/.local/bin/doq'
 
-" use google format
+" use google format 
 let g:pydocstring_formatter = 'google'
 
-" insert single docstring to current buffer
+" insert single docstring to current buffer 
 nnoremap <silent> <C--> <Plug>(pydocstring)
 
 " insert docstring to all
@@ -362,6 +362,10 @@ let vim_markdown_preview_github=1
 
 " TODO:  <22-01-20, YL> "
 " customize vim airline
+
+" airline on top 
+" TODO: this is not working <26-09-20, YL> "
+" let g:airline_statusline_ontop=1
 
 " airline theme 
 let g:airline_theme='lucius'
