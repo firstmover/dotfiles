@@ -114,8 +114,8 @@ call plug#end()
 nnoremap <leader>jc :YcmCompleter GoToDeclaration<CR>
 
 " menu color 
-highlight Pmenu ctermfg=063 ctermbg=235 guifg=#005f87 guibg=#EEE8D5
-highlight PmenuSel ctermfg=063 ctermbg=235 guifg=#AFD700 guibg=#106900
+autocmd VimEnter,Colorscheme * :hi Pmenu ctermfg=063 ctermbg=235 guifg=#005f87 guibg=#EEE8D5
+autocmd VimEnter,Colorscheme * :hi PmenuSel ctermfg=063 ctermbg=235 guifg=#AFD700 guibg=#106900
 
 " use completion in comment 
 let g:ycm_complete_in_comments=1
@@ -349,9 +349,9 @@ let g:gitgutter_override_sign_column_highlight=0
 
 " color 
 " highlight SignColumn guibg=#073642 ctermbg=234
-hi GitGutterAdd    guifg=#009900 guibg=#073642 ctermfg=2 ctermbg=232
-hi GitGutterChange guifg=#bbbb00 guibg=#073642 ctermfg=3 ctermbg=232
-hi GitGutterDelete guifg=#ff2222 guibg=#073642 ctermfg=1 ctermbg=232
+autocmd VimEnter,Colorscheme * :hi GitGutterAdd    guifg=#009900 guibg=#073642 ctermfg=2 ctermbg=232
+autocmd VimEnter,Colorscheme * :hi GitGutterChange guifg=#bbbb00 guibg=#073642 ctermfg=3 ctermbg=232
+autocmd VimEnter,Colorscheme * :hi GitGutterDelete guifg=#ff2222 guibg=#073642 ctermfg=1 ctermbg=232
 
 " vim-markdown-preview 
 let vim_markdown_preview_github=1 
