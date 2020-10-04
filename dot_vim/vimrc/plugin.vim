@@ -42,7 +42,7 @@ endif
 Plug 'gcmt/wildfire.vim'
 
 " python docstring
-Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
+Plug 'heavenshell/vim-pydocstring', { 'do': 'make install', 'for': 'python'}
 
 """"""""""""
 "  layout  "
@@ -246,24 +246,6 @@ let g:NERDTreeHighlightFolders = 1
 
 " highlights the folder name
 let g:NERDTreeHighlightFoldersFullName = 1 
-
-
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                           vim-pydocstring                                  "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" path to doq, doq installed locally
-let g:pydocstring_doq_path = '$HOME/.local/bin/doq'
-
-" use google format 
-let g:pydocstring_formatter = 'google'
-
-" insert single docstring to current buffer 
-nnoremap <silent> <C--> <Plug>(pydocstring)
-
-" insert docstring to all
-nnoremap <silent> <C-_> :call pydocstring#format()<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                   tagbar                                   "

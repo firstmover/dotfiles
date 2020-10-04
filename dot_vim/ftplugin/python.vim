@@ -18,3 +18,19 @@ let b:ale_fixers = {
 " do not fix on save 
 let b:ale_fix_on_save=0
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                           vim-pydocstring                                  "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" path to doq, doq installed locally
+let g:pydocstring_doq_path = '$HOME/.local/bin/doq'
+
+" use google format 
+let g:pydocstring_formatter = 'google'
+
+" insert single docstring to current buffer 
+nnoremap <silent> <C--> <Plug>(pydocstring)
+
+" insert docstring to all
+nnoremap <silent> <C-_> :call pydocstring#format()<CR>
+
