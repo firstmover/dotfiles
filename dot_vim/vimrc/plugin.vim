@@ -212,14 +212,6 @@ let g:NERDToggleCheckAllLines = 1
 " TODO:  <22-01-20, YL> "
 " reorganize 
 
-" open file list when open file
-" see taglist autogroup
-" autocmd vimenter * NERDTree
-" autocmd VimEnter * wincmd l
-
-" quit vim if nerdtree is the last window 
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
 " open nerdtree, ;file list
 nnoremap <Leader>fl :NERDTreeToggle<CR>
 
@@ -260,6 +252,9 @@ augroup nerdtree_tagbar
 
   " move cursor from nerd tree to left pane
   autocmd VimEnter * wincmd l 
+
+  " quit vim if nerdtree is the last window 
+  autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 augroup END
 
