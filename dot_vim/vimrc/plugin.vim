@@ -535,8 +535,8 @@ let g:ale_sign_warning='.'
 " highlight clear ALEErrorSign
 " highlight clear ALEWarningSign
 let g:ale_set_highlights=0
-highlight ALEErrorSign ctermfg=Red ctermbg=232
-highlight ALEWarningSign ctermfg=Yellow ctermbg=232
+autocmd VimEnter,Colorscheme * :hi ALEErrorSign ctermfg=Red ctermbg=232
+autocmd VimEnter,Colorscheme * :hi ALEWarningSign ctermfg=Yellow ctermbg=232
 
 " NOTE:: moved to ftplugin 
 " fixers 
