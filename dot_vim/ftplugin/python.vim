@@ -29,7 +29,11 @@ let g:pydocstring_doq_path = '$HOME/.local/bin/doq'
 let g:pydocstring_formatter = 'google'
 
 " insert single docstring to current buffer 
-nnoremap <silent> <C--> <Plug>(pydocstring)
+nnoremap <silent> <C--> :call pydocstring#insert()<CR>
+
+" NOTE:: this will not work, check
+" vim-pydocstring/ftplugin/python/pydocstring.vim
+" nnoremap <silent> <C-_> <Plug>(pydocstring)<CR>
 
 " insert docstring to all
 nnoremap <silent> <C-_> :call pydocstring#format()<CR>
