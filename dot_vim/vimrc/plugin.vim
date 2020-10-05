@@ -42,7 +42,10 @@ endif
 Plug 'gcmt/wildfire.vim'
 
 " python docstring
-Plug 'heavenshell/vim-pydocstring', { 'do': 'make install', 'for': 'python'}
+Plug 'heavenshell/vim-pydocstring', { 'do': 'make install', 'for': 'python' }
+
+" python remove unused import and variables
+Plug 'tell-k/vim-autoflake', { 'for': 'python' }
 
 """"""""""""
 "  layout  "
