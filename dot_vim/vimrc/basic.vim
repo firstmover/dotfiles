@@ -53,6 +53,9 @@ augroup END
 
 " map kk to esc in insert mode 
 inoremap kk <esc>
+inoremap Kk <esc>
+inoremap kK <esc>
+inoremap KK <esc>
 inoremap jj <esc>
 " inoremap ww <esc>
 " inoremap <esc> <nop> 
