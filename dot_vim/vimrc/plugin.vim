@@ -72,6 +72,7 @@ Plug 'nathanaelkane/vim-indent-guides'
 
 " navigation across text 
 Plug 'Lokaltog/vim-easymotion'
+Plug 'rhysd/clever-f.vim'
 
 " file finder 
 " TODO:  <28-01-20, YL> "
@@ -276,8 +277,19 @@ let g:tagbar_foldlevel=99
 "nmap <leader>s <Plug>(easymotion-overwin-f)
 
 " map  m <Plug>(easymotion-bd-w)
-nnoremap m <Plug>(easymotion-overwin-w)
+" nnoremap m <Plug>(easymotion-overwin-w)
 "nmap s <Plug>(easymotion-overwin-f2)
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                             rhysd/clever-f.vim                             "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" smart case 
+let g:clever_f_smart_case=1
+
+" use Search color 
+let g:clever_f_mark_char=1
+let g:clever_f_mark_char_color = "Search"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                               vim-gitgutter                                "
