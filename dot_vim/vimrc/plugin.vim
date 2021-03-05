@@ -41,6 +41,9 @@ endif
 " quick select 
 Plug 'gcmt/wildfire.vim'
 
+" add surround
+Plug 'tpope/vim-surround'
+
 " python docstring
 Plug 'heavenshell/vim-pydocstring', { 'do': 'make install', 'for': 'python' }
 
@@ -72,6 +75,13 @@ Plug 'nathanaelkane/vim-indent-guides'
 
 " navigation across text 
 Plug 'Lokaltog/vim-easymotion'
+
+" search 
+Plug 'haya14busa/incsearch.vim'
+Plug 'haya14busa/incsearch-fuzzy.vim'
+Plug 'haya14busa/incsearch-easymotion.vim'
+
+" better f 
 Plug 'rhysd/clever-f.vim'
 
 " file finder 
@@ -279,6 +289,25 @@ let g:tagbar_foldlevel=99
 " map  m <Plug>(easymotion-bd-w)
 " nnoremap m <Plug>(easymotion-overwin-w)
 "nmap s <Plug>(easymotion-overwin-f2)
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                 incsearch,                                 "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" incsearch.vim x fuzzy x vim-easymotion
+
+function! s:config_easyfuzzymotion(...) abort
+  return extend(copy({
+  \   'converters': [incsearch#config#fuzzy#converter()],
+  \   'modules': [incsearch#config#easymotion#module()],
+  \   'keymap': {"\<CR>": '<Over>(easymotion)'},
+  \   'is_expr': 0,
+  \   'is_stay': 1
+  \ }), get(a:, 1, {}))
+endfunction
+
+noremap <silent><expr> <Leader>/ incsearch#go(<SID>config_easyfuzzymotion())
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                             rhysd/clever-f.vim                             "
