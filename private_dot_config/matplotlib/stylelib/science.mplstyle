@@ -1,6 +1,3 @@
-# matplotlib default style for science translational medicine
-# modified from SciencePlot science, grid style 
-
 # Matplotlib style for scientific plotting
 # This is the base style for "SciencePlots"
 # see: https://github.com/garrettj403/SciencePlots
@@ -42,10 +39,10 @@ savefig.bbox : tight
 savefig.pad_inches : 0.05
 
 # Use serif fonts
-# sci.transl.med. recommands use Myriad but it is patented by Adobe
-font.family : sans-serif
-mathtext.fontset : Arial
+# font.serif : Times
+font.family : serif
+mathtext.fontset : dejavuserif
 
-# No LaTeX 
-text.usetex : False
-# text.latex.preamble : \usepackage{amsmath}
+# Use LaTeX for math formatting
+text.usetex : True
+text.latex.preamble : \usepackage{amsmath}
