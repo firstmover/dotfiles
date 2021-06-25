@@ -110,10 +110,6 @@ call plug#end()
 " jump to declaration 
 nnoremap <leader>jc :YcmCompleter GoToDeclaration<CR>
 
-" menu color 
-autocmd VimEnter,Colorscheme * :hi Pmenu ctermfg=063 ctermbg=235 guifg=#005f87 guibg=#EEE8D5
-autocmd VimEnter,Colorscheme * :hi PmenuSel ctermfg=063 ctermbg=235 guifg=#AFD700 guibg=#106900
-
 " use completion in comment 
 let g:ycm_complete_in_comments=1
 
