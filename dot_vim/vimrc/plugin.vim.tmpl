@@ -18,9 +18,15 @@ call plug#begin('~/.vim/plugged')
 """""""""""""
 
 " text completion 
+{{- if eq .vim_completion "ycm" }}
 " TODO:  <19-01-20, YL> "
 " clang flag??
 Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 install.py' }
+{{- end }}
+{{- if eq .vim_completion "coc" }}
+Plug 'neoclide/coc.nvim'
+{{- end }}
+
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
 
@@ -99,7 +105,7 @@ Plug 'airblade/vim-gitgutter'
 
 call plug#end() 
 
-
+{{- if eq .vim_completion "ycm" }}
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                               YouCompleteMe                                "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -108,7 +114,7 @@ call plug#end()
 " read youcompleteme new features 
 
 " jump to declaration 
-nnoremap <leader>jc :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>jd :YcmCompleter GoToDeclaration<CR>
 
 " use completion in comment 
 let g:ycm_complete_in_comments=1
@@ -139,7 +145,37 @@ let g:ycm_min_num_of_chars_for_completion=2
 
 " Use global ycm_extra_conf.py 
 let g:ycm_global_ycm_extra_conf='~/.vim/ycm_extra_conf_python.py'
+{{- end }}
 
+{{- if eq .vim_completion "coc" }}
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                               coc.nvim                                     "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" modified from coc.nvim default config
+
+" Use tab for trigger completion with characters ahead and navigate.
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" GoTo code navigation.
+nmap <silent> jd <Plug>(coc-definition)
+" nmap <silent> gy <Plug>(coc-type-definition)
+" nmap <silent> gi <Plug>(coc-implementation)
+" nmap <silent> gr <Plug>(coc-references)
+
+" Symbol renaming.
+nmap <leader>rn <Plug>(coc-rename)
+{{- end }}
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                          vim-snippets, ultisnips                           "
