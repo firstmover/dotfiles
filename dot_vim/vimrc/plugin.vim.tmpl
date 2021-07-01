@@ -24,7 +24,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 install.py' }
 {{- end }}
 {{- if eq .vim_completion "coc" }}
-Plug 'neoclide/coc.nvim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 {{- end }}
 
 Plug 'honza/vim-snippets'
@@ -168,7 +168,7 @@ function! s:check_back_space() abort
 endfunction
 
 " GoTo code navigation.
-nmap <silent> jd <Plug>(coc-definition)
+nmap <leader> jd <Plug>(coc-definition)
 " nmap <silent> gy <Plug>(coc-type-definition)
 " nmap <silent> gi <Plug>(coc-implementation)
 " nmap <silent> gr <Plug>(coc-references)
