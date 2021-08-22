@@ -153,6 +153,9 @@ let g:ycm_global_ycm_extra_conf='~/.vim/ycm_extra_conf_python.py'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " modified from coc.nvim default config
 
+" avoid conflicting with node in virtual/conda environment
+let g:coc_node_path = '/usr/bin/node'
+
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
