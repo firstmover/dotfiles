@@ -4,7 +4,7 @@ Personal dotfiles.
 
 ## Usage
 
-1. Install chezmoi
+1. Install [chezmoi](https://github.com/twpayne/chezmoi)
 ```bash
 curl -sfL https://git.io/chezmoi | sh -s -- -b ./.bin
 ```
