@@ -11,7 +11,7 @@ curl -sfL https://git.io/chezmoi | sh -s -- -b ./.bin
 
 2. Install dotfile with chezmoi 
 ```bash
-~/.bin/chezmoi -S ~/.chezmoi init https://github.com/firstmover/dotfiles_chezmoi.git
+~/.bin/chezmoi -S ~/.chezmoi init https://github.com/firstmover/dotfiles.git
 ```
 
 3. Apply dotfile to local machine 
@@ -22,5 +22,7 @@ curl -sfL https://git.io/chezmoi | sh -s -- -b ./.bin
 ## Acknowledgement
 
 [thoughtbot/dotfiles](https://github.com/thoughtbot/dotfiles)
+
 [wfxr/dotfiles](https://github.com/wfxr/dotfiles)
+
 [vacancy/dotfiles](https://github.com/vacancy/dotfiles)
