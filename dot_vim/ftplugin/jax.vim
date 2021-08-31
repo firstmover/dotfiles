@@ -1,5 +1,5 @@
 
-" 2 space as a tab 
+" 2 space as a tab
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
@@ -15,6 +15,5 @@ let b:ale_fixers = ['prettier']
 " Equivalent to the above.
 let b:ale_fixers = {'javascript': ['prettier']}
 
-" do not fix on save 
+" do not fix on save
 let b:ale_fix_on_save=0
-
