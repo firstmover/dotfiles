@@ -44,6 +44,8 @@ augroup vimrc_filetype
   autocmd BufRead,BufNewFile .{jscs,jshint,eslint}rc set filetype=json
   autocmd BufRead,BufNewFile .alias,.env,.function,.bindkey set filetype=sh
   autocmd BufRead,BufNewFile .tmux.conf.local set filetype=tmux
+  autocmd BufRead,BufNewFile .ts,.tsx set filetype=typescript
+  autocmd BufRead,BufNewFile .js,.jsx set filetype=javascript
 
 augroup END
  
