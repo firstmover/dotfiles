@@ -29,6 +29,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
+Plug 'mlaursen/vim-react-snippets', {'for': ['javascript', 'typescript', 'jsx', 'tsx']}
 
 " template 
 Plug 'aperezdc/vim-template'
@@ -181,26 +182,37 @@ nmap <leader>jd <Plug>(coc-definition)
 
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
+
+" coc snippets
+
+" Use <C-f> for trigger snippet expand.
+imap <C-f> <Plug>(coc-snippets-expand)
 {{- end }}
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                          vim-snippets, ultisnips                           "
+"                              vim-snippets                                  "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "personal_snippets"]
+{{- if eq .vim_completion "ycm" }}
 let g:UltiSnipsExpandTrigger="<c-f>"
 "let g:UltiSnipsJumpForwardTrigger="<c-n>"
 "let g:UltiSnipsJumpBackwardTrigger="<c-z>" 
+{{- end }}
 
 let g:ultisnips_python_style="google"
 let g:ultisnips_python_quoting_style="single"
 let g:ultisnips_python_triple_quoting_style="double"
 
+"let g:UltiSnipsEditSplit="vertical"
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                 ultisnips                                  "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 let g:snips_author="YL"  " author name tag in codes 
 let g:snips_email="liuyc@mit.edu"
 let g:snips_github="https://github.com/firstmover"
-
-"let g:UltiSnipsEditSplit="vertical"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                vim-template                                "
