@@ -199,6 +199,12 @@ let g:UltiSnipsExpandTrigger="<c-f>"
 "let g:UltiSnipsJumpForwardTrigger="<c-n>"
 "let g:UltiSnipsJumpBackwardTrigger="<c-z>" 
 {{- end }}
+{{- if eq .vim_completion "coc" }}
+" Just to remove UltiSnipsExpandTrigger function
+let g:UltiSnipsExpandTrigger="<Esc>"
+"let g:UltiSnipsJumpForwardTrigger="<c-n>"
+"let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+{{- end }}
 
 let g:ultisnips_python_style="google"
 let g:ultisnips_python_quoting_style="single"
