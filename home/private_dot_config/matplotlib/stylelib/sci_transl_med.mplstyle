@@ -44,7 +44,7 @@ savefig.pad_inches : 0.05
 # Use serif fonts
 # sci.transl.med. recommands use Myriad but it is patented by Adobe
 font.family : sans-serif
-mathtext.fontset : Arial
+mathtext.fontset : dejavusans
 
 # No LaTeX 
 text.usetex : False
