@@ -19,10 +19,3 @@ else
     echo "installing autojump"
     cargo install autojump
 fi
-
-# install bash/zsh executables
-autojump_exe_dir="$HOME/.autojump/share/autojump"
-echo $autojump_exe_dir
-[ ! -d $autojump_exe_dir ] && mkdir -p $autojump_exe_dir
-curl -o "$autojump_exe_dir/autojump.zsh" https://github.com/wting/autojump/blob/master/bin/autojump.zsh
-curl -o "$autojump_exe_dir/autojump.bash" https://github.com/wting/autojump/blob/master/bin/autojump.bash
