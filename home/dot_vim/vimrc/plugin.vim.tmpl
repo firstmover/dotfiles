@@ -18,14 +18,7 @@ call plug#begin('~/.vim/plugged')
 """""""""""""
 
 " text completion 
-{{- if eq .vim_completion "ycm" }}
-" TODO:  <19-01-20, YL> "
-" clang flag??
-Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 install.py' }
-{{- end }}
-{{- if eq .vim_completion "coc" }}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-{{- end }}
 
 Plug 'honza/vim-snippets'
 " Plug 'SirVer/ultisnips'
@@ -109,50 +102,6 @@ Plug 'leafgarland/typescript-vim'
 
 call plug#end() 
 
-{{- if eq .vim_completion "ycm" }}
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                               YouCompleteMe                                "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" TODO:  <19-01-20, YL> "
-" read youcompleteme new features 
-
-" jump to declaration 
-nnoremap <leader>jd :YcmCompleter GoToDeclaration<CR>
-
-" use completion in comment 
-let g:ycm_complete_in_comments=1
-
-" allow loading ycm_extra_conf file 
-let g:ycm_confirm_extra_conf=1
-
-" 开启 YCM 标签补全引擎
-"let g:ycm_collect_identifiers_from_tags_files=0
-"" 引入 C++ 标准库 tags
-"set tags+=/data/misc/software/app/vim/stdcpp.tags
-"set tags+=/data/misc/software/app/vim/sys.tags
-
-" YCM 集成 OmniCppComplete 补全引擎，设置其快捷键
-"inoremap <leader>; <C-x><C-o>
-
-" 补全内容不以分割子窗口形式出现，只显示补全列表
-"set completeopt-=preview
-
-" start completion from second char 
-let g:ycm_min_num_of_chars_for_completion=2
-
-" 禁止缓存匹配项，每次都重新生成匹配项
-"let g:ycm_cache_omnifunc=0
-
-" 语法关键字补全
-"let g:ycm_seed_identifiers_with_syntax=1
-
-" Use global ycm_extra_conf.py 
-let g:ycm_global_ycm_extra_conf='~/.vim/ycm_extra_conf_python.py'
-{{- end }}
-
-{{- if eq .vim_completion "coc" }}
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                               coc.nvim                                     "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -188,24 +137,16 @@ nmap <leader>rn <Plug>(coc-rename)
 
 " Use <C-f> for trigger snippet expand.
 imap <C-f> <Plug>(coc-snippets-expand)
-{{- end }}
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                              vim-snippets                                  "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "personal_snippets"]
-{{- if eq .vim_completion "ycm" }}
-let g:UltiSnipsExpandTrigger="<c-f>"
-"let g:UltiSnipsJumpForwardTrigger="<c-n>"
-"let g:UltiSnipsJumpBackwardTrigger="<c-z>" 
-{{- end }}
-{{- if eq .vim_completion "coc" }}
 " Just to remove UltiSnipsExpandTrigger function
 let g:UltiSnipsExpandTrigger="<nop>"
 "let g:UltiSnipsJumpForwardTrigger="<c-n>"
 "let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-{{- end }}
 
 let g:ultisnips_python_style="google"
 let g:ultisnips_python_quoting_style="single"
