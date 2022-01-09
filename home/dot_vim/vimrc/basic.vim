@@ -175,6 +175,7 @@ set laststatus=2
 " show line number 
 " set number
 set relativenumber
+set nu rnu
 
 " disable line wrapping 
 set nowrap
