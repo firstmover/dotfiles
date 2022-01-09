@@ -28,11 +28,6 @@ zplug "wfxr/forgit", defer:2
 # extract compressed files 
 zplug "plugins/extract", from:oh-my-zsh
 
-# autojump 
-# TODO:  <28-01-20, YL> #
-# add key bindings 
-zplug "plugins/autojump", from:oh-my-zsh
-
 # Set the priority when loading
 # zsh-syntax-highlighting must be loaded
 # after executing compinit command and sourcing other plugins
