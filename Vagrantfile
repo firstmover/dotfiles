@@ -33,7 +33,7 @@ Vagrant.configure(2) do |config|
       echo "Installing tools"
       apt-get update -qq
       apt-get install -qq \
-        git gcc curl zip zsh bash build-essential \
+        git gcc curl zip zsh bash tmux build-essential \
         python python2.7-dev python3-dev python3-pip
     EOF
   end 
