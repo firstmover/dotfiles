@@ -3,7 +3,8 @@ Vagrant.configure(2) do |config|
   # We use Ubuntu instead of Debian because the image comes with two-way
   # shared folder support by default.
   # UBUNTU = 'hashicorp/bionic64'
-  UBUNTU = "ubuntu/xenial64"
+  # UBUNTU = "ubuntu/xenial64"
+  UBUNTU = "bento/ubuntu-18.04"
 
   config.vm.define(:dotfiles) do |config|
     config.vm.provider :virtualbox do |v|
@@ -34,7 +35,8 @@ Vagrant.configure(2) do |config|
       apt-get update -qq
       apt-get install -qq \
         git gcc curl zip zsh bash tmux build-essential \
-        python python2.7-dev python3-dev python3-pip
+        python python2.7-dev python3-dev python3-pip \
+        pkg-config autoconf
     EOF
   end 
 end 
