@@ -74,7 +74,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 " indent line 
-Plug 'nathanaelkane/vim-indent-guides'
+Plug 'Yggdroot/indentLine'
 
 """"""""""""""""
 "  navigation  "
@@ -152,6 +152,7 @@ let g:ycm_global_ycm_extra_conf='~/.vim/ycm_extra_conf_python.py'
 {{- end }}
 
 {{- if eq .vim_completion "coc" }}
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                               coc.nvim                                     "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -201,7 +202,7 @@ let g:UltiSnipsExpandTrigger="<c-f>"
 {{- end }}
 {{- if eq .vim_completion "coc" }}
 " Just to remove UltiSnipsExpandTrigger function
-let g:UltiSnipsExpandTrigger="<Esc>"
+let g:UltiSnipsExpandTrigger="<nop>"
 "let g:UltiSnipsJumpForwardTrigger="<c-n>"
 "let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 {{- end }}
@@ -431,25 +432,14 @@ let vim_markdown_preview_github=1
 let g:airline_theme='lucius'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                             vim-indent-guides                              "
+"                             indentLine                                     "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" do not show in startup 
-let g:indent_guides_enable_on_vim_startup = 0
+let g:indentLine_color_term = 239
+let g:indentLine_color_gui = '#A4E57E'
 
-" show indent line from second level
-let g:indent_guides_start_level=2
-
-" width of indent
-let g:indent_guides_guide_size=1
-
-" <Leader> ig toggle indent
-nnoremap <silent> <Leader>ig <Plug>IndentGuidesToggle
-
-" indent color
-let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=darkgray ctermbg=darkgray
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=darkgray ctermbg=darkgray
+let g:indentLine_bgcolor_term = darkgray
+let g:indentLine_bgcolor_gui = '#FF5F00'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                 auto-pairs                                 "
@@ -545,25 +535,6 @@ if executable('rg')
 
 endif 
 
-" Customize fzf colors to match your color scheme
-" - fzf#wrap translates this to a set of `--color` options
-" TODO:  <08-02-20, YL> "
-" update color, this is ugly 
-" let g:fzf_colors =
-" \ { 'fg':      ['fg', 'Normal'],
-"   \ 'bg':      ['bg', 'Normal'],
-"   \ 'hl':      ['fg', 'Comment'],
-"   \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-"   \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-"   \ 'hl+':     ['fg', 'Statement'],
-"   \ 'info':    ['fg', 'PreProc'],
-"   \ 'border':  ['fg', 'Ignore'],
-"   \ 'prompt':  ['fg', 'Conditional'],
-"   \ 'pointer': ['fg', 'Exception'],
-"   \ 'marker':  ['fg', 'Keyword'],
-"   \ 'spinner': ['fg', 'Label'],
-"   \ 'header':  ['fg', 'Comment'] }
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                             dense-analysis/ale                             "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -583,7 +554,7 @@ augroup ale
     autocmd InsertEnter * call ale#Queue(0)
     autocmd InsertLeave * call ale#Queue(0)
   else
-    echoerr "The thoughtbot dotfiles require NeoVim or Vim 8"
+    echoerr "The dotfiles require NeoVim or Vim 8"
   endif
 augroup END
 
@@ -597,12 +568,6 @@ let g:ale_sign_warning='.'
 let g:ale_set_highlights=0
 autocmd VimEnter,Colorscheme * :hi ALEErrorSign ctermfg=Red ctermbg=232
 autocmd VimEnter,Colorscheme * :hi ALEWarningSign ctermfg=Yellow ctermbg=232
-
-" NOTE:: moved to ftplugin 
-" fixers 
-" let g:ale_fixers = {
-" \   'python': ['mypy', 'isort', 'flake8', 'black'],
-" \}
 
 " do not fix on save 
 " let g:ale_fix_on_save=0
