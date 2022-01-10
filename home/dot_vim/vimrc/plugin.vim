@@ -79,7 +79,6 @@ Plug 'Lokaltog/vim-easymotion'
 " search 
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/incsearch-fuzzy.vim'
-Plug 'haya14busa/incsearch-easymotion.vim'
 
 " better f 
 Plug 'rhysd/clever-f.vim'
@@ -293,19 +292,20 @@ let g:tagbar_foldlevel=99
 "                                 incsearch,                                 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" incsearch.vim x fuzzy x vim-easymotion
+" remove highlight after search 
+let g:incsearch#auto_nohlsearch = 1
 
-function! s:config_easyfuzzymotion(...) abort
-  return extend(copy({
-  \   'converters': [incsearch#config#fuzzy#converter()],
-  \   'modules': [incsearch#config#easymotion#module()],
-  \   'keymap': {"\<CR>": '<Over>(easymotion)'},
-  \   'is_expr': 0,
-  \   'is_stay': 1
-  \ }), get(a:, 1, {}))
-endfunction
+" incsearch 
+" TODO: nnoremap does not work. why? <09-01-22, YL> "
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
 
-noremap <silent><expr> <Leader>/ incsearch#go(<SID>config_easyfuzzymotion())
+" fuzzy incsearch
+" TODO: not used often in practise. remove it. <09-01-22, YL> "
+map z/ <Plug>(incsearch-fuzzy-/)
+map z? <Plug>(incsearch-fuzzy-?)
+map zg/ <Plug>(incsearch-fuzzy-stay)
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                             rhysd/clever-f.vim                             "
