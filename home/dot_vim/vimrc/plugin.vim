@@ -176,7 +176,8 @@ nnoremap <leader>t :Template<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Add spaces after comment delimiters by default
-let g:NERDSpaceDelims = 1
+" TODO: fix it set 1 will get 2 spaces <09-01-22, YL> "
+let g:NERDSpaceDelims = 0
 
 " Use compact syntax for prettified multi-line comments
 let g:NERDCompactSexyComs = 1
