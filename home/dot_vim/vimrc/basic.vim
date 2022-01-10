@@ -63,8 +63,8 @@ inoremap jj <esc>
 " inoremap <esc> <nop> 
 
 " move to beginning/end of line
-nnoremap , ^
-nnoremap . $
+noremap , ^
+noremap . $
 " nnoremap $ <nop>
 " nnoremap ^ <nop>
 
