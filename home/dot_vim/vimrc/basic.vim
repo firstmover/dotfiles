@@ -120,8 +120,8 @@ set mouse=a
 " wrap <,>,h,l to move to next or previous line 
 " set whichwrap+=<,>,h,l
 
-" 8 line to cursor 
-set so=8
+" 16 line to cursor 
+set scrolloff=16
 
 " do incremental searching 
 set incsearch 
