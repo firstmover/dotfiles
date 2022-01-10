@@ -74,7 +74,7 @@ Plug 'Yggdroot/indentLine'
 """"""""""""""""
 
 " navigation across text 
-Plug 'Lokaltog/vim-easymotion'
+Plug 'phaazon/hop.nvim'
 
 " search 
 Plug 'haya14busa/incsearch.vim'
@@ -272,21 +272,20 @@ let g:tagbar_sort=0
 let g:tagbar_foldlevel=99
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                               vim-easymotion                               "
+"                               phaazon/hop.nvim                             "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" TODO:  <22-01-20, YL> "
-" reorganize 
+" set up lua hop every time enter 
+augroup hop_nvim
+  autocmd!
+  autocmd VimEnter * lua require'hop'.setup() 
+augroup END
 
-" <leader>c{char} to move to {char}
-
-"map  <leader>s <Plug>(easymotion-bd-f)            
-"nmap <leader>s <Plug>(easymotion-overwin-f)
-
-" map  m <Plug>(easymotion-bd-w)
-" nnoremap m <Plug>(easymotion-overwin-w)
-"nmap s <Plug>(easymotion-overwin-f2)
-
+" use easymotion keybindings 
+map <Leader><Leader>j :HopLineAC<cr>
+map <Leader><Leader>k :HopLineBC<cr>
+map <Leader><Leader>h :HopWordBC<cr>
+map <Leader><Leader>l :HopWordAC<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                 incsearch,                                 "

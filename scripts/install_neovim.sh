@@ -14,7 +14,7 @@ else
     echo "installing neovim"
 
     TARGET_DIR=$HOME/.bin
-    NVIM_URL=https://github.com/neovim/neovim/releases/download/stable/nvim.appimage
+    NVIM_URL="https://github.com/neovim/neovim/releases/download/v0.6.1/nvim.appimage"
     [ ! -d $TARGET_DIR ] && mkdir -p $TARGET_DIR
     cd $TARGET_DIR && { curl -OL $NVIM_URL ; cd -; }
     chmod u+x $TARGET_DIR/nvim.appimage
