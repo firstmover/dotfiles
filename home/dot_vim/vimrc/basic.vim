@@ -103,20 +103,6 @@ if has("autocmd")
     autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
 endif
 
-" toggle spell checking on and off 
-map <leader>ss :setlocal spell!<cr>
-
-" next / previous misspelled word
-map <leader>sn ]s
-map <leader>sp [s
-
-" add misspelled word to dictionary / mark as misspelled 
-map <leader>sa zg
-map <leader>sm zw 
-
-" list alternative to misspelled word 
-map <leader>s? z=
-
 " toggle paste mode on and off 
 map <leader>pp :setlocal paste!<cr>
 
