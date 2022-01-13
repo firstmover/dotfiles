@@ -107,7 +107,7 @@ call plug#end()
 " modified from coc.nvim default config
 
 " avoid conflicting with node in virtual/conda environment
-let g:coc_node_path = '/usr/bin/node'
+let g:coc_node_path = trim(system('which node'))
 
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
