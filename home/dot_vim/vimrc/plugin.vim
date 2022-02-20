@@ -39,7 +39,8 @@ if g:has_async
 endif 
 
 " quick select 
-Plug 'gcmt/wildfire.vim'
+" Plug 'gcmt/wildfire.vim'
+Plug 'terryma/vim-expand-region'
 
 " add surround
 Plug 'tpope/vim-surround'
@@ -128,6 +129,10 @@ nmap <leader>jd <Plug>(coc-definition)
 " nmap <silent> gy <Plug>(coc-type-definition)
 " nmap <silent> gi <Plug>(coc-implementation)
 " nmap <silent> gr <Plug>(coc-references)
+
+" Find and open definition split / vsplit
+nmap <leader>ji <cmd>call CocAction('jumpDefinition', 'split')<CR>
+nmap <leader>js <cmd>call CocAction('jumpDefinition', 'vsplit')<CR>
 
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
@@ -283,10 +288,11 @@ augroup hop_nvim
 augroup END
 
 " use easymotion keybindings 
-map <Leader><Leader>j :HopLineAC<cr>
-map <Leader><Leader>k :HopLineBC<cr>
-map <Leader><Leader>h :HopWordBC<cr>
-map <Leader><Leader>l :HopWordAC<cr>
+" NOTE: use : to map command will not work in visual mode
+map <Leader><Leader>j <cmd>HopLineAC<cr>
+map <Leader><Leader>k <cmd>HopLineBC<cr>
+map <Leader><Leader>h <cmd>HopWordBC<cr>
+map <Leader><Leader>l <cmd>HopWordAC<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                 incsearch,                                 "
@@ -297,9 +303,10 @@ let g:incsearch#auto_nohlsearch = 1
 
 " incsearch 
 " TODO: nnoremap does not work. why? <09-01-22, YL> "
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
+" TODO: something wrong with hightlights and it is slow 
+"map /  <Plug>(incsearch-forward)
+"map ?  <Plug>(incsearch-backward)
+"map g/ <Plug>(incsearch-stay)
 
 " fuzzy incsearch
 " TODO: not used often in practise. remove it. <09-01-22, YL> "
@@ -469,10 +476,10 @@ if executable('rg')
     command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 
     " search word under cursor
-    nnoremap <silent> <Leader>s :RG <C-R><C-W><CR>
+    nnoremap <silent> <Leader>s <cmd>RG <C-R><C-W><CR>
 
     " open rf serach engine
-    nnoremap <silent> <c-s> :RG <CR>
+    nnoremap <silent> <c-s> <cmd>RG <CR>
 
 endif 
 
@@ -517,16 +524,20 @@ autocmd VimEnter,Colorscheme * :hi ALEWarningSign ctermfg=Yellow ctermbg=232
 nnoremap H :ALEFix<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                             gcmt/wildfire.vim                              "
+"                   terryma/vim-expand-region                                "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" text object 
-let g:wildfire_objects = ["i'", 'i"', "i)", "i]", "i}", "ip", "it"]
+map <enter> <Plug>(expand_region_expand)
+map <backspace> <Plug>(expand_region_shrink)
 
-" NOTE:: enter and bs is good 
-
-" selects next closest text object.
-" map <SPACE> <Plug>(wildfire-fuel)
-
-" selects previous closest text object.
-" vmap <C-SPACE> <Plug>(wildfire-water)
+" Default settings. (NOTE: Remove comments in dictionary before sourcing)
+let g:expand_region_text_objects = {
+      \ 'iw'  :0,
+      \ 'iW'  :0,
+      \ 'i"'  :0,
+      \ 'i''' :0,
+      \ 'i]'  :1, 
+      \ 'ib'  :1, 
+      \ 'iB'  :1, 
+      \ 'ip'  :0,
+      \ }
