@@ -476,7 +476,7 @@ if executable('rg')
     command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 
     " search word under cursor
-    nnoremap <silent> <Leader>s <cmd>RG <C-R><C-W><CR>
+    nnoremap <silent> <Leader>s :RG <C-R><C-W><CR>
 
     " open rf serach engine
     nnoremap <silent> <c-s> <cmd>RG <CR>
