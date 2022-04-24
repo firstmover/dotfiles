@@ -464,6 +464,12 @@ endif
 " use ripgrep for string match
 if executable('rg')
 
+    " Tell FZF to use RG - so we can skip .gitignore files even if not using
+    " :GitFiles search
+    let $FZF_DEFAULT_COMMAND = 'rg --files --hidden'
+    " If you want gitignored files:
+    " let $FZF_DEFAULT_COMMAND = 'rg --files --no-ignore-vcs --hidden'
+
     function! RipgrepFzf(query, fullscreen)
         " NOTE: remove --column will disable preview 
         " NOTE: the match color is wrong when remove reload 
