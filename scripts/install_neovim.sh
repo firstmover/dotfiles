@@ -23,4 +23,4 @@ fi
 python3 -m pip install pynvim
 
 nvim.appimage +"PlugInstall" +qall
-nvim.appimage +":CocInstall coc-pyright, coc-snippet" +qall
+nvim.appimage +":CocInstall coc-pyright,coc-snippets" +qall
