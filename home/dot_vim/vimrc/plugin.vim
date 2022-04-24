@@ -379,6 +379,16 @@ let vim_markdown_preview_github=1
 
 " airline theme 
 let g:airline_theme='lucius'
+"let g:airline_solarized_bg='dark'
+
+" NOTE: this is not working 
+"let g:airline#extensions#coc#enabled=0
+
+" remove extensior print 
+let g:airline#extensions#default#layout = [
+      \ [ 'a', 'b', 'c'],
+      \ [ 'z' ]
+      \ ]
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                             indentLine                                     "
