@@ -171,6 +171,7 @@ let g:snips_github="https://github.com/firstmover"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 let g:templates_directory='$HOME/.vim/templates'
+let g:templates_search_height=2
 let g:username='Yingcheng Liu'
 let g:email='liuyc@mit.edu'
 
