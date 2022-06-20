@@ -20,6 +20,9 @@ call plug#begin('~/.vim/plugged')
 " text completion 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+" github copilot
+Plug 'github/copilot.vim'
+
 Plug 'honza/vim-snippets'
 " Plug 'SirVer/ultisnips'
 Plug 'mlaursen/vim-react-snippets', {'for': ['javascript', 'typescript', 'jsx', 'tsx']}
@@ -142,6 +145,14 @@ nmap <leader>rn <Plug>(coc-rename)
 
 " Use <C-f> for trigger snippet expand.
 imap <C-f> <Plug>(coc-snippets-expand)
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                 copilot                                    "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" cycle suggestions 
+imap <C-]> <Plug>(copilot-next)
+imap <C-[> <Plug>(copilot-previous)
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                              vim-snippets                                  "
