@@ -38,13 +38,7 @@ alias l="exa -abghHliS --git"
 alias ls="exa"
 
 # neovim
-{{- if eq .chezmoi.os "linux" }}
-alias nvim="nvim.appimage"
-alias nv="nvim.appimage"
-{{- end }}
-{{- if eq .chezmoi.os "darwin" }}
 alias nv="nvim"
-{{- end }}
 
 # python 
 alias py="python"
